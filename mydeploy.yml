@@ -1,0 +1,12 @@
+---
+- name: Deploy Artifact to Localhost
+hosts: localhost
+tasks:
+- name: Copy the artifact to the target location
+become: true
+become_user: student
+become_method: su
+copy:
+src: "/var/lib/jenkins/workspace/< Your pipeline
+name>/target/<Your Maven project name>-1.0-SNAPSHOT.jar"
+dest: "/home/student/t.jar"
